@@ -1,0 +1,45 @@
+{
+  "name": "aliasjs",
+  "version": "1.0.0",
+  "description": "aliasjs - alias for conventional project based names",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreiLucaci/aliasjs.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "alias",
+    "aliasjs",
+    "alias objects"
+  ],
+  "author": "Andrei Lucaci",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreiLucaci/aliasjs/issues"
+  },
+  "homepage": "https://github.com/AndreiLucaci/aliasjs#readme",
+  "dependencies": {
+    "minobjs": "^1.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.3"
+  }
+}
